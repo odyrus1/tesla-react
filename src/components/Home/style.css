@@ -1,0 +1,9 @@
+.container h1{
+  text-align: center;
+  text-transform: capitalize;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.container h1:hover{
+  color: #E82127;
+}

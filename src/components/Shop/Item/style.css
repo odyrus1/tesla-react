@@ -1,0 +1,32 @@
+.shop-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+.shop-item img{
+  width: 50%;
+}
+.shop-item .item-description{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+.shop-item .item-description p{
+  line-height: 0.4;
+}
+.shop-item .item-description a{
+  margin: 10px auto;
+  padding: 10px 40px;
+  border: none;
+  text-decoration: none;
+  background: #E91B22;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.shop-item .item-description a:hover{
+  opacity: 0.8;
+}

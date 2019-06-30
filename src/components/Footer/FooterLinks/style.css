@@ -1,0 +1,24 @@
+.footerLinks-container li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+.footerLinks-container a{
+  text-decoration: none;
+  color: white;
+  transition: 0.2s;
+}
+.footerLinks-container a:hover{
+  color: #E82127;
+}
+
+@media screen and (max-width: 767px) {
+  .footerLinks-container li{
+    display: block;
+    margin: 15px 0;
+    text-align: center;
+  }
+  .footerLinks-container ul{
+    padding: 0;
+  }
+}

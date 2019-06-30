@@ -1,0 +1,15 @@
+i{
+  margin: 0 10px;
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+i:hover{
+  color: #E82127;
+}
+
+@media screen and (max-width: 767px) {
+  .social-container{
+    margin-top: 50px;
+  }
+}

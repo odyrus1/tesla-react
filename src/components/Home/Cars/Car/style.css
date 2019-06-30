@@ -1,0 +1,44 @@
+.car-container{
+  width: 45%;
+  margin: 15px auto;
+}
+.car-container:hover{
+  opacity: 0.8;
+}
+.car-container a{
+  text-decoration: none;
+  color: black;
+}
+.car-container h2{
+  text-align: center;
+  transition: 0.2s;
+}
+.car-container h2:hover{
+  color: #E82127;
+}
+.car-picture{
+  width: 100%;
+  height: 300px;
+}
+.car-picture img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.car-description{
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .car-container{
+    width: 100%;
+    margin: 15px auto;
+  }
+  .car-description{
+    padding: 0 10px;
+  }
+  .car-picture{
+    width: 100%;
+    height: auto;
+  }
+}
