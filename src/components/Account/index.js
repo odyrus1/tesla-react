@@ -19,7 +19,6 @@ class Account extends Component{
       })
       .then(function (response) {
         if(response){
-          console.log(response.data);
           this.setState({model: response.data.item_name, price: response.data.item_price})
         }
       }.bind(this))
@@ -43,8 +42,8 @@ class Account extends Component{
     content[1].classList.add("active");
   }
 
-  handleChange = e => {
-    e.preventDefault();
+  handleChange = event => {
+    event.preventDefault();
 
     let username = document.getElementById('username').value;
     let email = localStorage.getItem("email");
@@ -55,10 +54,9 @@ class Account extends Component{
 
   // Testing the informations (username only numbers and letters, email right format, passwords match)
   testInformation = (username, email, password) => {
-    let succesMessage = document.getElementById('succesMessage');
     let errorMessage = document.getElementById('errorMessage');
     let validation = 0;
-    this.validateUsername(username) == true ? validation++ : errorMessage.innerHTML = 'This username is wrong';
+    this.validateUsername(username) === true ? validation++ : errorMessage.innerHTML = 'This username is wrong';
     validation === 1 ? this.sendInformation(username, email, password) : errorMessage.innerHTML += '<br /> Informations have not been changed';
   }
   // Username validation
@@ -76,17 +74,18 @@ class Account extends Component{
       })
       .then(function (response) {
         if(response){
-          console.log(response);
           localStorage.setItem('username', response.data.user_name);
           window.location.href = "/account";
         }
-      }.bind(this))
+      })
       .catch(function (error) {
         console.log(error);
       });
   }
 
   render(){
+    const cartStatus = this.state.model ? <p>Your Cart: {this.state.model} - {this.state.price}$</p> : <p>Your Cart: empty</p>
+
     return(
       <div className="container accountContainer">
         <ul id="tabs">
@@ -96,7 +95,7 @@ class Account extends Component{
         <div className="accountInfo active" data-id="1">
           <p>Welcome {this.state.username}!</p>
           <p>Your email is {this.state.email}</p>
-          {this.state.model ? <p>Your Cart: {this.state.model} - {this.state.price}$</p> : <p>Your Cart: empty</p>}
+          {cartStatus}
         </div>
         <div className="changeInfo" data-id="2">
           <form action="" method="post">

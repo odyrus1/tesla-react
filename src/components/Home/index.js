@@ -1,10 +1,11 @@
 import React from 'react';
-import './style.css';
+
 import Cars from './Cars';
+import './style.css';
 
 function Home(){
   return(
-    <div className="container">
+    <div className="home-container">
       <h1>Welcome to Tesla Motors Company website</h1>
       <Cars />
     </div>

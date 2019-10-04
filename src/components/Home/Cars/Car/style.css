@@ -16,16 +16,16 @@
 .car-container h2:hover{
   color: #E82127;
 }
-.car-picture{
+.car__picture{
   width: 100%;
   height: 300px;
 }
-.car-picture img{
+.car__picture img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.car-description{
+.car__description{
   padding: 0 30px;
 }
 
@@ -34,11 +34,11 @@
     width: 100%;
     margin: 15px auto;
   }
-  .car-description{
-    padding: 0 10px;
-  }
-  .car-picture{
+  .car__picture{
     width: 100%;
     height: auto;
+  }
+  .car__description{
+    padding: 0 10px;
   }
 }

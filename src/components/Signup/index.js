@@ -4,8 +4,8 @@ import './style.css'
 
 class Signup extends Component{
 
-  handleSignup = e => {
-    e.preventDefault();
+  handleSignup = event => {
+    event.preventDefault();
 
     let username = document.getElementById('login').value;
     let email = document.getElementById('email').value;
@@ -17,11 +17,10 @@ class Signup extends Component{
 
   // Testing the informations (username only numbers and letters, email right format, passwords match)
   testInformation = (username, email, password, confirmPassword) => {
-    let succesMessage = document.getElementById('succesMessage');
     let errorMessage = document.getElementById('errorMessage');
     let validation = 0;
-    this.validateUsername(username) == true ? validation++ : errorMessage.innerHTML = 'This username is wrong';
-    this.validateEmail(email) == true ? validation++ : errorMessage.innerHTML = 'This email is wrong';
+    this.validateUsername(username) === true ? validation++ : errorMessage.innerHTML = 'This username is wrong';
+    this.validateEmail(email) === true ? validation++ : errorMessage.innerHTML = 'This email is wrong';
     password === confirmPassword ? validation++ : errorMessage.innerHTML = 'The passwords dont match';
     validation === 3 ? this.sendInformation(username, email, password) : errorMessage.innerHTML += '<br /> User not created';
   }
@@ -44,17 +43,15 @@ class Signup extends Component{
         password: password
       })
       .then(function (response) {
-        console.log(response);
-        let succesMessage = document.getElementById('succesMessage');
         let errorMessage = document.getElementById('errorMessage');
-        if(response.data == true){
+        if(response.data === true){
           localStorage.setItem('username', username);
           localStorage.setItem('email', email);
           window.location.href = "/";
         } else {
           errorMessage.innerHTML = 'This email is already used for another account';
         }
-      }.bind(this))
+      })
       .catch(function (error) {
         console.log(error);
       });

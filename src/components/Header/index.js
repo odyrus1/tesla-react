@@ -1,7 +1,8 @@
 import React from 'react';
-import './style.css';
+
 import Logo from './Logo';
 import Menu from './Menu';
+import './style.css';
 
 function Header(){
   return(

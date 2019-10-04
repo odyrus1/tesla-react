@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
-import './App.css';
 import Header from './Header';
 import Home from './Home';
 import Models from './Models';
@@ -11,13 +10,11 @@ import Signin from './Signin';
 import Account from './Account';
 import Footer from './Footer';
 
-class App extends Component{
-
-  render(){
+function App(){
     return (
       <div>
           <Header />
-          <Route exact path="/" exact component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/models" render={()=><Models model="Model S"/>}/>
           <Route path="/modelx" render={()=><Models model="Model X"/>}/>
           <Route path="/model3" render={()=><Models model="Model 3"/>}/>
@@ -28,7 +25,6 @@ class App extends Component{
           <Footer />
       </div>
     );
-  }
 }
 
 export default App;

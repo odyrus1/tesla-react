@@ -1,33 +1,32 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
-import './style.css';
 import Car from './Car';
+import carsData from "./carsData"
+import './style.css';
 
 class Cars extends Component{
 
   state = {
-    car: ''
+    carsData
   }
 
   componentDidMount() {
-    axios.get('http://localhost/React/MyFirstReact/my-app/backend/cars.php')
-    .then(response => {
-      this.setState({
-        car: response.data
-      })
-
-    })
-    .catch(error => {
-      console.log(error);
-    });
+    // Пример того как бы я это сделал если бы данные о машинах я получал от API
+    // fetch("faketeslaapi.com")
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     this.setState({ carsData: response.cars.data })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //   });
   }
 
   render(){
+    const cars = this.state.carsData.map((carData, index) => <Car key={index} carData={carData} />)
     return(
       <div className="cars-container">
-        <Car carData = {this.state.car} />
-        <Car carData = {this.state.car} />
+        {cars}
       </div>
     )
   }

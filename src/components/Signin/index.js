@@ -4,8 +4,8 @@ import './style.css'
 
 class Signin extends Component{
 
-  handleSignin = e => {
-    e.preventDefault();
+  handleSignin = event => {
+    event.preventDefault();
 
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
@@ -24,7 +24,7 @@ class Signin extends Component{
         } else {
           errorMessage.innerHTML = 'Your email or password is wrong';
         }
-      }.bind(this))
+      })
       .catch(function (error) {
         console.log(error);
       });

@@ -1,14 +1,15 @@
 import React from 'react';
+
 import './style.css';
 
 function Model(props){
-  const {modelData} = props
+  const {modelName, modelImg, modelText, modelPower, modelRange, modelPrice} = props.modelData
   return(
     <div>
-      <h1>{modelData.model_name}</h1>
+      <h1>{modelName}</h1>
       <div className="modelContainer">
-        <img src={modelData.model_img} alt="tesla model" />
-        <p>{modelData.model_text}</p>
+        <img src={modelImg} alt="tesla model" />
+        <p>{modelText}</p>
         <table>
           <thead>
           <tr>
@@ -19,9 +20,9 @@ function Model(props){
           </thead>
           <tbody>
           <tr>
-            <td>{modelData.model_power}kvh</td>
-            <td>{modelData.model_range}km</td>
-            <td>{modelData.model_price}$</td>
+            <td>{modelPower}kvh</td>
+            <td>{modelRange}km</td>
+            <td>{modelPrice}$</td>
           </tr>
           </tbody>
         </table>
