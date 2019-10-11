@@ -19,7 +19,7 @@ class Menu extends Component{
   }
 
   handleMenu = () => {
-    var mobileMenu = document.getElementById('menu-mobile');
+    let mobileMenu = document.getElementById('menu-mobile');
     mobileMenu.classList.toggle("active");
     document.body.classList.toggle("active");
   }

@@ -28,14 +28,14 @@ class Account extends Component{
   }
 
   handleTabs = event => {
-    var tabs = document.querySelectorAll('#tabs li');
+    let tabs = document.querySelectorAll('#tabs li');
     for (let i = 0; i < tabs.length; i++) {
       tabs[i].classList.remove("active");
     }
     event.target.classList.add("active");
-    var dataId = event.target.getAttribute("data-id");
-    var content = document.querySelectorAll('[data-id="'+dataId+'"]');
-    var contents = document.querySelectorAll('.accountContainer div')
+    let dataId = event.target.getAttribute("data-id");
+    let content = document.querySelectorAll('[data-id="'+dataId+'"]');
+    let contents = document.querySelectorAll('.accountContainer div')
     for (let i = 0; i < contents.length; i++) {
       contents[i].classList.remove("active");
     }
